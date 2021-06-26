@@ -25,7 +25,7 @@ class md5C():
             self.d = i
             sys.stdout.write('\r[+] testing on `%s`' % i.decode())
             if self.the_md5 in self.md5List:
-                print("%s"%(i.decode()))
+                print("%s:%s"%(i.decode(),self.the_md5))
 
     def selfList(self, min_length, max_length,chrs='abcdefghijklmnopqestuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.'):
         for n in range(min_length, max_length + 1):
@@ -33,7 +33,7 @@ class md5C():
                 chars = ''.join(xs)
                 self.d = chars.encode()
                 if self.the_md5 in self.md5List:
-                    print("%s"%(chars))
+                    print("%s:%s"%(chars,self.the_md5))
                 sys.stdout.write('\r[+] testing on `%s`' % chars)
                 self.d = chars
                 sys.stdout.flush()
